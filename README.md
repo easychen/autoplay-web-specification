@@ -1,2 +1,5 @@
-# autoplay-web-specification
-自播放网页规范 specification of autoplay web
+# specification of autoplay web
+
+[简体中文](README.cn.md)
+
+
