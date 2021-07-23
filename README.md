@@ -1,12 +1,9 @@
-# specification of autoplay web
-
 [简体中文](README.cn.md)
-
 
 # Browser Recording Tool and Self-Playing Web Page Specification
 
-- Specification No. BROWSER-REC
-- Specification number BROWSER-REC-AUTO-WEB
+- Specification BROWSER-REC / BRREC for short
+- Specification BROWSER-REC-SELF-PLAYING-WEB / BRSPW for short
 
 ## What is a browser recording tool
 
@@ -37,7 +34,7 @@ Provides an http protocol to accept requests
 - Interface description: start recording
 - Parameters: No parameters
 - Methods: GET and POST
-- Success return: {"message": "done", "task_id":""} task_id is optional
+- Success return: {"code":"0","message": "done", "task_id":""} task_id is optional
 - Error return: {"code": "error number", "error": "error message"}
 - Note: To facilitate the call, this interface needs to support CORS call
 
@@ -46,7 +43,7 @@ Provides an http protocol to accept requests
 - Interface description: stop recording
 - Parameters: task_id (optional)
 - Methods: GET and POST
-- Success return: {"message": "done"}
+- Success return: {"code":"0","message": "done"}
 - Error return: {"code": "error number", "error": "error message"}
 - Note: To facilitate the call, this interface needs to support CORS call
 
@@ -55,7 +52,7 @@ Provides an http protocol to accept requests
 - Interface description: Check the status of the recorded task
 - Parameters: task_id (optional)
 - Methods: GET and POST
-- Success return: {"message":{"recorded task status object"}}
+- Success return: {"code":"0","message":{"recorded task status object"}}
 - Error return: {"code": "error number", "error": "error message"}
 - Note: To facilitate the call, this interface needs to support CORS call
 
@@ -67,5 +64,5 @@ If the "Browser Recording Tool" includes a browser, then in addition to accessin
 
 For example, the /start port can be called via JavaScript when the content is loaded, and the /stop port can be called via Javascript to end the recording when the content is finished.
 
-Self-playing web pages that control recording operations through the above interface are considered to comply with the BROWSER-REC-AUTO-WEB specification.
+Self-playing web pages that control recording operations through the above interface are considered to comply with the BRSPW specification.
 

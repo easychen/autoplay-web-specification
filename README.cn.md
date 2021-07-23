@@ -1,7 +1,7 @@
 # 浏览器录制工具和自播放网页规范
 
-- 规范编号 BROWSER-REC
-- 规范编号 BROWSER-REC-AUTO-WEB
+- 规范编号 BROWSER-REC 简称 BRREC 
+- 规范编号 BROWSER-REC-SELF-PLAYING-WEB 简称 BRSPW 
 
 ## 什么是浏览器录制工具
 
@@ -32,7 +32,7 @@
 - 接口描述：开始录制
 - 参数：没有参数
 - 方法：GET 和 POST
-- 成功返回：{"message":"done"，"task_id":""} task_id 为可选
+- 成功返回：{"code":"0","message":"done"，"task_id":""} task_id 为可选
 - 错误返回：{"code":"错误编号","error":"错误信息"}
 - 备注：为方便调用，此接口需支持 CORS 调用
 
@@ -41,7 +41,7 @@
 - 接口描述：停止录制
 - 参数：task_id（可选）
 - 方法：GET 和 POST
-- 成功返回：{"message":"done"}
+- 成功返回：{"code":"0","message":"done"}
 - 错误返回：{"code":"错误编号","error":"错误信息"}
 - 备注：为方便调用，此接口需支持 CORS 调用
 
@@ -50,7 +50,7 @@
 - 接口描述：查看录制任务状态
 - 参数：task_id（可选）
 - 方法：GET 和 POST
-- 成功返回：{"message":{"录制任务状态对象"}}
+- 成功返回：{"code":"0","message":{"录制任务状态对象"}}
 - 错误返回：{"code":"错误编号","error":"错误信息"}
 - 备注：为方便调用，此接口需支持 CORS 调用
 
@@ -62,5 +62,5 @@
 
 比如，当内容加载完成后，可以通过 JavaScript 调用 /start 端口；当内容播放完后，可以通过 Javascript 调用 /stop 端口结束录制。
 
-通过以上接口控制录制操作的自播放网页，被认为遵守 BROWSER-REC-AUTO-WEB 规范。
+通过以上接口控制录制操作的自播放网页，被认为遵守 BRSPW 规范。
 
